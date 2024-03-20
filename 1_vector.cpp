@@ -1,0 +1,245 @@
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+
+#define ll long long int
+#define I_HATE_PROGRAMMING int main
+
+#define kill return
+
+#define tc ll tcc; cin >> tcc; while(tcc--)
+#define fast_read() (ios_base :: sync_with_stdio(false), cin.tie(NULL));
+
+//!------------------------------------------------------------------------
+
+
+vector<int>v1;     //Normal Initialization
+vector<double>v2;  //Normal Initialization
+vector<char>v3;    //Normal Initialization
+vector<string>v4;  //Normal Initialization
+
+vector<int>v(10);  // with size
+
+vector<int>v5(10, 15);   // with size, and filled with 15
+
+// Vector from another Vector
+vector<int>v6 = {1, 2, 3, 4, 5, 4, 6};
+vector<int>v7(v6);
+
+//!------------------------------------------------------------------------
+void Print(vector<int>vv);
+void Print0(vector<int>vv);
+void Print1(vector<int>vv);
+void Print2(vector<int>vv);
+//!------------------------------------------------------------------------
+
+I_HATE_PROGRAMMING(){
+    fast_read();
+    //___Size__Capacity__Clearing__________________________________________
+    cout << "The Max Size of Vector : " << v1.max_size() << endl;
+    cout << "Initial Size : " << v1.size() << endl;
+    cout << "Initial Capacity : " << v1.capacity() << endl;
+    v1.push_back(110);
+    v1.push_back(2);
+    v1.push_back(333);
+    v1.push_back(4);
+    v1.push_back(590);
+    v1.push_back(6);
+    cout << "Size after Pushing 5 element : " << v.size() << endl;
+    cout << "Capacity after Pushing 5 element : " << v.capacity() << endl;
+    //Size is the number of elements in the vector
+    //capacity is the allocated memory to the vector
+    //When the capacity is full for the next element to be added
+    // the capacity of the vector or the allocated memory for the vector will be doubled
+    
+    //!------------------------------------------------------------------------
+
+    cout << "Before Delete last value : ";
+    Print(v1);
+    cout << "After Delete last value : ";
+    v1.pop_back(); // Delete the last value
+    Print(v1);
+    //!------------------------------------------------------------------------
+
+    cout << "Before Reverse : "; Print0(v1);
+    reverse(v1.begin(), v1.end());
+    cout << "After Reverse : "; Print0(v1);
+    //!------------------------------------------------------------------------
+    
+    v1.push_back(6999);
+    v1.push_back(55);
+    v1.push_back(1);
+    v1.push_back(123);
+    
+    cout << "Before Sort : "; Print0(v1);
+
+    sort(v1.begin(), v1.end());
+
+    cout << "After Sort : "; Print0(v1);
+    //!------------------------------------------------------------------------
+
+    cout << "Before Swap V1: " ; Print2(v1);
+    cout << "Before Swap V6: " ; Print2(v6);
+
+    swap(v1, v6);
+
+    cout << "After Swap V1: " ; Print2(v1);
+    cout << "After Swap V6: " ; Print2(v6);
+    //!------------------------------------------------------------------------
+
+    cout << "Before clearing : ";
+    if(v1.empty()){
+        cout << "Vector v1 is empty" << endl;
+    }else{
+        cout << "Vector v1 is Not_empty" << endl;
+    }
+
+    v1.clear();
+
+    cout << "After clearing : ";
+    if(v1.empty()){
+        cout << "Vector v1 is empty" << endl;
+    }else{
+        cout << "Vector v1 is Not_empty" << endl;
+    }
+    //!------------------------------------------------------------------------
+
+    //___Inserting_________________________________________________
+
+    cout << "Before Insert V6:" ; Print2(v6);
+
+    // v6.insert(v6.begin(), 9999);
+    // v6.insert(v6.begin()+2, 9999);       // Types of Inserting
+    // v6.insert(v6.begin(), 5, 9999);
+    // v6.insert(v6.begin()+2, 5, 9999);
+    v6.insert(v6.begin()+5,v7.begin(),v7.end());  //For inserting another vector
+    
+    cout << "After Insert V6:" ; Print2(v6);
+    //!------------------------------------------------------------------------
+
+    //___Erasing_________________________________________________
+
+    cout << "Before Erase V6:" ; Print2(v6);
+
+    v6.erase(v6.begin());     //for single erase
+    // v6.erase(v6.begin()+1);
+    // v.erase(v.begin()+2,v.begin()+5);     //For multiple erase
+    // v6.erase(v6.begin()+2, v6.end());
+    
+    cout << "After Erase V6:" ; Print2(v6);
+    //!------------------------------------------------------------------------
+
+    //___Resizing_V6___________________________________________________________
+    
+    cout << "Before Resizing V6:" ; Print2(v6);
+
+    v6.resize(4);
+
+    cout << "After Resizing V6: " ; Print2(v6);
+    //!------------------------------------------------------------------------
+
+    
+    //___Vector replace and Finding____________________________________________
+
+    vector<int>v1={1,2,33,4,5,33,5,33,7,8,33};
+    cout << "Before Replace V1:" ; Print2(v1);
+
+    replace(v1.begin(),v1.end(),33,1010);     //replacing 33 with 1010
+
+    cout << "After Replace V1:" ; Print2(v1);
+
+
+    // Finding uses Iterator
+    // cout<<find(v.begin(),v.end(),3);   //gives error coz find returns iterators
+
+    // vector<int>::iterator itt;
+    // itt = find(v1.begin(),v1.end(), 3);
+    // cout << *itt;//cant print iterator Thats why we'll have to print reference
+
+    auto itt = find(v1.begin(), v1.end(), 3);
+
+    if(itt == v1.end()){ 
+        cout << "Not found" << endl;
+    }else{ 
+        cout << "Found" << endl;
+    }
+    //!------------------------------------------------------------------------
+
+
+    //   Element access.......................
+
+    cout << "Print Front value : " << v1.front() << endl;
+    cout << "Print Last value : " << v1.back() << endl;
+
+    /* 1 */  cout << "Reference Operator v1[2] : " << v1[2] << endl;
+    /* 2 */  cout << "at(2) : " << v1.at(2) << endl;
+
+    // Difference Between 1 & 2
+
+    // cout << v1[50] << endl;      // Print Garbage Value
+    // cout << v1.at(50) << endl;   // print '--> Warning Massage'
+    //!------------------------------------------------------------------------
+
+    //___User_input____________________________________________________________
+
+    // cin.ignore();
+    // for(int i=0; i<10; i++){
+    //     string s;
+    //     getline(cin, s);
+    //     v4.push_back(s);
+    // }
+
+    // for(string str:v4){
+    //     cout << str << " ";
+    // }
+    // cout << endl;
+
+    //___Vector_Pair____________________________________________________________
+
+    vector<pair<int, int>> v_p = {{1, 2}, {2, 3}, {3, 4}};
+
+    vector<pair<int, int>>::iterator itp;
+
+    for (itp = v_p.begin(); itp != v_p.end(); itp++){
+        cout << (*itp).first << " " << (*itp).second << endl;
+    }
+
+    kill 0;
+}
+
+
+
+
+
+//!------------------------------------------------------------------------
+void Print(vector<int>vv){
+    for(int i=0; i<vv.size(); i++){
+        cout << vv[i] << " ";
+    }
+    cout << endl;
+}
+
+void Print0(vector<int>vv){
+
+    vector<int>::iterator it;    // vector< Data_type > ::iterator Iterator_Name
+
+    for(it=vv.begin(); it != vv.end(); it++){
+        cout << *it << " ";
+    }
+    cout << endl;
+}
+
+void Print1(vector<int>vv){
+    for(auto it: vv){
+        cout << it << " ";
+    }
+    cout << endl;
+}
+
+void Print2(vector<int>vv){
+    for(int i:vv){
+        cout << i << " ";
+    }
+    cout << endl;
+}
+//!------------------------------------------------------------------------
