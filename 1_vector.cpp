@@ -10,7 +10,7 @@ using namespace std;
 #define tc ll tcc; cin >> tcc; while(tcc--)
 #define fast_read() (ios_base :: sync_with_stdio(false), cin.tie(NULL));
 
-//!------------------------------------------------------------------------
+//!Global_Declaration------------------------------------------------------
 
 
 vector<int>v1;     //Normal Initialization
