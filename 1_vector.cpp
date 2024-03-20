@@ -165,6 +165,12 @@ I_HATE_PROGRAMMING(){
     }
     //!------------------------------------------------------------------------
 
+    //___Maximum / Minimum_____________________________________________________
+
+    int Max = *max_element(v1.begin(), v1.end());
+    int Min = *min_element(v1.begin(), v1.end());
+    cout << "Maximum number in v1: " << Max << endl;
+    cout << "Minimum number in v1: " << Min << endl;
 
     //   Element access.......................
 
@@ -204,10 +210,17 @@ I_HATE_PROGRAMMING(){
         cout << (*itp).first << " " << (*itp).second << endl;
     }
 
+    //___Vector_Assign__________________________________________________________
+    cout << "V1 before assign : " ; Print0(v1);
+
+    set<int>st = {1,1,1,1,11,1,1,1,2,3};
+    v1.assign(st.begin(), st.end());
+
+    cout << "V1 After assign : " ; Print0(v1);
+
+
     kill 0;
 }
-
-
 
 
 
