@@ -230,7 +230,7 @@ void Print0(vector<int>vv){
 }
 
 void Print1(vector<int>vv){
-    for(auto it: vv){
+    for(auto it: vv){          // Auto Iterator
         cout << it << " ";
     }
     cout << endl;
