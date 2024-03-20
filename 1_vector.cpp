@@ -51,6 +51,19 @@ I_HATE_PROGRAMMING(){
     //capacity is the allocated memory to the vector
     //When the capacity is full for the next element to be added
     // the capacity of the vector or the allocated memory for the vector will be doubled
+
+    //.......Element access.......................
+
+    cout << "Print Front value : " << v1.front() << endl;
+    cout << "Print Last value : " << v1.back() << endl;
+
+    /* 1 */  cout << "Reference Operator v1[2] : " << v1[2] << endl;
+    /* 2 */  cout << "at(2) : " << v1.at(2) << endl;
+
+    // Difference Between 1 & 2
+
+    // cout << v1[50] << endl;      // Print Garbage Value
+    // cout << v1.at(50) << endl;   // print '--> Warning Massage'
     
     //!------------------------------------------------------------------------
 
@@ -172,18 +185,6 @@ I_HATE_PROGRAMMING(){
     cout << "Maximum number in v1: " << Max << endl;
     cout << "Minimum number in v1: " << Min << endl;
 
-    //   Element access.......................
-
-    cout << "Print Front value : " << v1.front() << endl;
-    cout << "Print Last value : " << v1.back() << endl;
-
-    /* 1 */  cout << "Reference Operator v1[2] : " << v1[2] << endl;
-    /* 2 */  cout << "at(2) : " << v1.at(2) << endl;
-
-    // Difference Between 1 & 2
-
-    // cout << v1[50] << endl;      // Print Garbage Value
-    // cout << v1.at(50) << endl;   // print '--> Warning Massage'
     //!------------------------------------------------------------------------
 
     //___User_input____________________________________________________________
