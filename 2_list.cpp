@@ -58,19 +58,23 @@ int main(){
     /* Using Iterator */ cout << "Using Iterator : "; Print(li1);
     /* Using Auto Iterator */ cout << "Using Auto Iterator : "; Print0(li1);
 
-    //!_________________________________________________________________________________________
+    //!___Pop Back & Front_______________________________________________________________________
 
     cout << endl;
     cout << "Before Delete last value : ";
     Print(li1);
     cout << "After Delete last value : ";
+
     li1.pop_back(); // Delete the last value
+
     Print(li1);
 
     cout << "Before Delete The first value : ";
     Print(li1);
     cout << "After Delete the first value : ";
+
     li1.pop_front(); // Delete the Front value
+    
     Print(li1);
 
     //!____Reverse______________________________________________________________________________
