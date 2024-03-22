@@ -35,7 +35,8 @@ void Print2(vector<int>vv);
 
 I_HATE_PROGRAMMING(){
     fast_read();
-    //___Size__Capacity__Clearing__________________________________________
+
+    //___Size__Capacity____________________________________________________
     cout << "The Max Size of Vector : " << v1.max_size() << endl;
     cout << "Initial Size : " << v1.size() << endl;
     cout << "Initial Capacity : " << v1.capacity() << endl;
@@ -65,20 +66,25 @@ I_HATE_PROGRAMMING(){
     // cout << v1[50] << endl;      // Print Garbage Value
     // cout << v1.at(50) << endl;   // print '--> Warning Massage'
     
-    //!------------------------------------------------------------------------
+    //!--Pop_Back--------------------------------------------------------------
 
+    cout << endl;
     cout << "Before Delete last value : ";
     Print(v1);
     cout << "After Delete last value : ";
     v1.pop_back(); // Delete the last value
     Print(v1);
-    //!------------------------------------------------------------------------
 
+    //!--Reverse----------------------------------------------------------------------
+
+    cout << endl;
     cout << "Before Reverse : "; Print0(v1);
     reverse(v1.begin(), v1.end());
     cout << "After Reverse : "; Print0(v1);
-    //!------------------------------------------------------------------------
+
+    //!--Sort----------------------------------------------------------------------
     
+    cout << endl;
     v1.push_back(6999);
     v1.push_back(55);
     v1.push_back(1);
@@ -89,8 +95,10 @@ I_HATE_PROGRAMMING(){
     sort(v1.begin(), v1.end());
 
     cout << "After Sort : "; Print0(v1);
-    //!------------------------------------------------------------------------
 
+    //!---Swap---------------------------------------------------------------------
+
+    cout << endl;
     cout << "Before Swap V1: " ; Print2(v1);
     cout << "Before Swap V6: " ; Print2(v6);
 
@@ -98,8 +106,10 @@ I_HATE_PROGRAMMING(){
 
     cout << "After Swap V1: " ; Print2(v1);
     cout << "After Swap V6: " ; Print2(v6);
-    //!------------------------------------------------------------------------
 
+    //!--Clear & Empty----------------------------------------------------------------------
+
+    cout << endl;
     cout << "Before clearing : ";
     if(v1.empty()){
         cout << "Vector v1 is empty" << endl;
@@ -115,10 +125,12 @@ I_HATE_PROGRAMMING(){
     }else{
         cout << "Vector v1 is Not_empty" << endl;
     }
+
     //!------------------------------------------------------------------------
 
     //___Inserting_________________________________________________
 
+    cout << endl;
     cout << "Before Insert V6:" ; Print2(v6);
 
     // v6.insert(v6.begin(), 9999);
@@ -132,6 +144,7 @@ I_HATE_PROGRAMMING(){
 
     //___Erasing_________________________________________________
 
+    cout << endl;
     cout << "Before Erase V6:" ; Print2(v6);
 
     v6.erase(v6.begin());     //for single erase
@@ -144,6 +157,7 @@ I_HATE_PROGRAMMING(){
 
     //___Resizing_V6___________________________________________________________
     
+    cout << endl;
     cout << "Before Resizing V6:" ; Print2(v6);
 
     v6.resize(4);
@@ -154,6 +168,7 @@ I_HATE_PROGRAMMING(){
     
     //___Vector replace and Finding____________________________________________
 
+    cout << endl;
     vector<int>v1={1,2,33,4,5,33,5,33,7,8,33};
     cout << "Before Replace V1:" ; Print2(v1);
 
@@ -180,6 +195,7 @@ I_HATE_PROGRAMMING(){
 
     //___Maximum / Minimum_____________________________________________________
 
+    cout << endl;
     int Max = *max_element(v1.begin(), v1.end());
     int Min = *min_element(v1.begin(), v1.end());
     cout << "Maximum number in v1: " << Max << endl;
@@ -203,6 +219,7 @@ I_HATE_PROGRAMMING(){
 
     //___Vector_Pair____________________________________________________________
 
+    cout << endl;
     vector<pair<int, int>> v_p = {{1, 2}, {2, 3}, {3, 4}};
 
     vector<pair<int, int>>::iterator itp;
@@ -212,6 +229,8 @@ I_HATE_PROGRAMMING(){
     }
 
     //___Vector_Assign__________________________________________________________
+    
+    cout << endl;
     cout << "V1 before assign : " ; Print0(v1);
 
     set<int>st = {1,1,1,1,11,1,1,1,2,3};
