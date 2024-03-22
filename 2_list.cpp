@@ -30,7 +30,7 @@ void Print0(list<int>lli);
 int main(){
     fast_read();
 
-    //___Size__Capacity____________________________________________________
+    //___Size_&_value_pushing___________________________________________________
 
     cout << "The Max Size of List : " << li1.max_size() << endl;
     cout << "Initial Size : " << li1.size() << endl;

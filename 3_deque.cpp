@@ -32,7 +32,7 @@ void Print2(deque<int>dqq);  // Like Array
 int main(){
     fast_read();
 
-    //___Size__Capacity____________________________________________________
+    //___Size__&_value_push__________________________________________________
 
     cout << "The Max Size of deque : " << dq.max_size() << endl;
     cout << "Initial Size : " << dq.size() << endl;
