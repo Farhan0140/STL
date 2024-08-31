@@ -5,6 +5,40 @@ using namespace std;
 
 #define fast_read() (ios_base :: sync_with_stdio(false), cin.tie(NULL));
 
+//*---------Custom Compare Class---------------------------------------------------------------
+
+class Student{
+    public:
+      string name;
+      int roll;
+      int marks;
+
+    Student(string name, int roll, int marks) {
+        this->name = name;
+        this->roll = roll;
+        this->marks = marks;
+    }
+};
+
+class Custom_Compare{  // At first, sorting the class depends on marks. If marks are equal then sort the class depending on roll because rolls are unique.
+    public:
+      bool operator()(Student a, Student b) {
+          if(a.marks < b.marks) {
+              return true;
+          } else if(a.marks == b.marks) {
+              if(a.roll > b.roll) {
+                  return true;
+              } else {
+                  return false;
+              }
+          } else {
+              return false;
+          }
+      }
+};
+
+//*---------------------------------------------------------------------------------------------
+
 //!Global_Declaration---------------------------------------------------------------------------
 
 priority_queue<int>pq;     //Normal Initialization
@@ -40,7 +74,7 @@ int main(){
     pq.emplace(4);
     pq.emplace(90);
     pq.emplace(90);
-    cout << "Size after Pushing 5 element : " << pq.size() << endl;
+    cout << "Size after Pushing 6 element : " << pq.size() << endl;
 
     //.......Element access.......................
     
@@ -72,8 +106,29 @@ int main(){
     pq.swap(pq1);
 
     cout << "After Swap pq : "; Print1(pq);
-    cout << "After Swap pq1 : "; Print2(pq1);
+    cout << "After Swap pq1 : "; Print2(pq1); cout << "\n" << endl;
 
+    cout << "Custom Compare Class:: " << endl;
+    
+    Student o1("akib", 23, 95);
+    Student o2("jobbar", 24, 99);
+    Student o3("ali", 25, 100);
+    Student o4("kabir", 15, 65);
+    Student o5("asif", 55, 65);
+    Student o6("tamim", 35, 65);
+
+    priority_queue<Student, vector<Student>, Custom_Compare> PQ;
+    PQ.push(o1);
+    PQ.push(o2);
+    PQ.push(o3);
+    PQ.push(o4);
+    PQ.push(o5);
+    PQ.push(o6);
+
+    while(!PQ.empty()) {
+        cout << PQ.top().name << " " << PQ.top().roll << " " << PQ.top().marks << endl;
+        PQ.pop();
+    }
     kill 0;
 }
 
