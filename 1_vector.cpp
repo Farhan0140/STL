@@ -26,6 +26,12 @@ vector<int>v5(10, 15);   // with size, and filled with 15
 vector<int>v6 = {1, 2, 3, 4, 5, 4, 6};
 vector<int>v7(v6);
 
+
+// 2D------------
+
+vector<vector<int>> v8(100, vector<int>(100));
+
+
 //!------------------------------------------------------------------------
 void Print(vector<int>vv);
 void Print0(vector<int>vv);
