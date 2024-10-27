@@ -29,7 +29,8 @@ vector<int>v7(v6);
 
 // 2D------------
 
-vector<vector<int>> v8(100, vector<int>(100));
+vector<vector<int>> v8(100, vector<int>(100)); // v8[100][100]
+vector<vector<int>> _2d; // _2d[....][....]
 
 
 //!------------------------------------------------------------------------
@@ -64,8 +65,8 @@ I_HATE_PROGRAMMING(){
     cout << "Print Front value : " << v1.front() << endl;
     cout << "Print Last value : " << v1.back() << endl;
 
-    /* 1 */  cout << "Reference Operator v1[2] : " << v1[2] << endl;
-    /* 2 */  cout << "at(2) : " << v1.at(2) << endl;
+    /* 1 */  //cout << "Reference Operator v1[2] : " << v1[2] << endl;
+    /* 2 */  //cout << "at(2) : " << v1.at(2) << endl;
 
     // Difference Between 1 & 2
 
@@ -99,6 +100,9 @@ I_HATE_PROGRAMMING(){
     cout << "Before Sort : "; Print0(v1);
 
     sort(v1.begin(), v1.end());
+    //                         Comparator
+    sort(v1.begin(), v1.end(), greater<int>()); //
+    sort(v1.rbegin(), v1.rend());               // ---> descending
 
     cout << "After Sort : "; Print0(v1);
 
@@ -202,26 +206,31 @@ I_HATE_PROGRAMMING(){
     //___Maximum / Minimum_____________________________________________________
 
     cout << endl;
+
     int Max = *max_element(v1.begin(), v1.end());
     int Min = *min_element(v1.begin(), v1.end());
+
     cout << "Maximum number in v1: " << Max << endl;
     cout << "Minimum number in v1: " << Min << endl;
 
-    //!------------------------------------------------------------------------
+    // Position of Max Element 
+    auto MAX = max_element(v1.begin(), v1.end());  // return iterator
+    int Max_Element_Position = MAX - v1.begin();
+
 
     //___User_input____________________________________________________________
 
-    // cin.ignore();
-    // for(int i=0; i<10; i++){
-    //     string s;
-    //     getline(cin, s);
-    //     v4.push_back(s);
-    // }
+    cin.ignore();
+    for(int i=0; i<10; i++){
+        string s;
+        getline(cin, s);
+        v4.push_back(s);
+    }
 
-    // for(string str:v4){
-    //     cout << str << " ";
-    // }
-    // cout << endl;
+    for(string str:v4){
+        cout << str << " ";
+    }
+    cout << endl;
 
     //___Vector_Pair____________________________________________________________
 
@@ -244,7 +253,21 @@ I_HATE_PROGRAMMING(){
 
     cout << "V1 After assign : " ; Print0(v1);
 
+    // or
+    v1.assign(5, -2);  //-----> -2 -2 -2 -2 -2
 
+
+    //___Iterator______________________________________________________________
+    // begin
+    // end
+    // rbegin --> reverse begin
+    // rend --> reverse end
+
+    // Ex Print0
+    vector<int>V= {1, 2, 3, 4, 5, 4, 6}; //  1 2 3 4 5 4 6 _
+                                  //  begin->1             end-> _  || --end()->6
+                                  // ++begin()-> 2
+    Print0(V);
     kill 0;
 }
 
@@ -260,9 +283,13 @@ void Print(vector<int>vv){
 
 void Print0(vector<int>vv){
 
-    vector<int>::iterator it;    // vector< Data_type > ::iterator Iterator_Name
+    //vector<int>::iterator it;    // vector< Data_type > ::iterator Iterator_Name
 
-    for(it=vv.begin(); it != vv.end(); it++){
+    // for(it=vv.begin(); it != vv.end(); it++){
+    //     cout << *it << " ";
+    // }
+
+    for(auto it=vv.rbegin(); it!=vv.rend(); it++) {
         cout << *it << " ";
     }
     cout << endl;
