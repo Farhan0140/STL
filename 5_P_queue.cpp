@@ -41,7 +41,7 @@ class Custom_Compare{  // At first, sorting the class depends on marks. If marks
 
 //!Global_Declaration---------------------------------------------------------------------------
 
-priority_queue<int>pq;     //Normal Initialization
+priority_queue<int>pq;     //Normal Initialization  ---> Max Heap
 priority_queue<int>pq1;
 priority_queue<double>pq2;  //Normal Initialization
 priority_queue<char>pq3;    //Normal Initialization
@@ -51,7 +51,7 @@ priority_queue<string>pq4;  //Normal Initialization
 // If we want the Priority_Queue will always print the lower value
 // then we need to follow this rule
 
-// priority_queue<int, vector<int>, greater<int>> pq;     //Normal Initialization
+// priority_queue<int, vector<int>, greater<int>> pq;     // ---> Min Heap
 
 //!---------------------------------------------------------------------------------------------
 void Print1(priority_queue<int>pqq);
